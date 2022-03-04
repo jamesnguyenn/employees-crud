@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html::-webkit-scrollbar {
+  width: 5px;
+  background-image: linear-gradient(to top, #9525fb, #ff70a4);
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 3px;
+}
+html::-webkit-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.toast-lists {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20rem;
+  margin: 0.7rem;
+}
+.toast-item {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  animation: opacity 2s forwards 1 ease-in-out;
+  overflow: hidden;
+}
+
+@keyframes opacity {
+  10%,
+  95% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.toast-body {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.toast-header {
+  padding: 0.4rem;
+  font-size: 0.7rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.toast-header i {
+  margin-right: 5px;
+}
+
+table {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.form-group p:first-of-type,
+input {
+  margin-bottom: 0.3rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.fa-edit {
+  font-size: 1.4rem;
+}
+.btn-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.btn {
+  font-size: 0.7rem;
+}
+
+.search {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 40px;
+  transition: all 0.5s;
+  box-shadow: 0 0 0 2px rgb(194, 194, 194);
+  overflow: hidden;
+  border: 1px solid 1px #000;
+}
+.search.active {
+  width: 350px;
+  box-shadow: 0 0 0 2px rgb(255, 167, 167);
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.icon.active:before {
+  border-color: #ff0000;
+}
+.icon.active:after {
+  background: #ff0000;
+}
+
+.icon:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  transform: translate(-2px, -3px);
+}
+
+.icon:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  background: #000;
+  transform: translate(6px, 6px) rotate(315deg);
+}
+.search .input {
+  position: relative;
+  width: 300px;
+  height: 45px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search .input #mySearch {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+.handler-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.clear-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  right: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search:before {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 15px;
+  background-color: #999;
+  transform: rotate(0);
+  transition: all 0.3s linear;
+}
+
+.clear-search:after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 15px;
+  background-color: #999;
+  transform: rotate(0);
+  transition: all 0.1s linear;
+}
+.clear-search.active::after {
+  background-color: #ff0000;
+  transform: rotate(45deg);
+}
+.clear-search.active::before {
+  background-color: #ff0000;
+  transform: rotate(315deg);
+}
+.search-lists {
+  position: absolute;
+  width: 350px;
+  top: 50px;
+  right: 0;
+  margin-left: auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 8px;
+  padding: 4px;
+  z-index: 2000000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s linear;
+}
+
+.search-item {
+  padding: 5px 10px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  text-decoration: none;
+  color: #ff0000;
+  background-color: #eee;
+}
+
+@media screen and (max-width: 767.98px) {
+  .search.active {
+    width: 200px;
+  }
+}

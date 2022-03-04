@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quản Lý Nhân Viên</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toast-lists"></div>
+    <div class="container">
+      <section class="section-wrapper rounded mt-2 border">
+        <h3 class="py-4 bg-dark text-center text-white">QUẢN LÝ NHÂN VIÊN</h3>
+        <div class="section-input px-4 mt-2">
+          <div class="form-group">
+            <p>Mã Nhân Viên</p>
+            <input class="form-control" id="maNhanvien" />
+            <p class="error-maNV text-danger"></p>
+          </div>
+          <div class="form-group">
+            <p>Tên Nhân Viên</p>
+            <input class="form-control" id="tenNhanvien" />
+            <p class="error-tenNV text-danger"></p>
+          </div>
+          <div class="form-group">
+            <p>Chức Vụ</p>
+            <select class="form-control" id="chucVu">
+              <option>Giám Đốc</option>
+              <option>Quản Lý</option>
+              <option>Nhân Viên</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Lương Cơ Bản</p>
+            <input class="form-control" id="luongCoBan" />
+            <p class="error-luong text-danger"></p>
+          </div>
+          <div class="form-group">
+            <p>Số Giờ Làm Trong Tháng</p>
+            <input class="form-control" id="gioLam" />
+            <p class="error-gio-lam text-danger"></p>
+          </div>
+          <div class="form-group">
+            <p>Xếp Loại Nhân Viên</p>
+            <select class="form-control" id="loaiNhanvien">
+              <option>Nhân Viên Xuất Sắc</option>
+              <option>Nhân Viên Giỏi</option>
+              <option>Nhân Viên Bình Thường</option>
+            </select>
+          </div>
+
+          <div class="handler-button form-group">
+            <div class="section-button text-left">
+              <button id="confirm" class="btn btn-outline-success">Add</button>
+            </div>
+            <div id="search" class="search">
+              <div class="icon"></div>
+              <div class="input">
+                <input
+                  type="text"
+                  placeholder="Search employee..."
+                  id="mySearch"
+                />
+              </div>
+              <span class="clear-search"> </span>
+            </div>
+            <ul class="search-lists"></ul>
+          </div>
+        </div>
+      </section>
+      <div class="mt-2 rounded overflow-auto">
+        <table class="table table-striped">
+          <thead class="bg-dark text-white">
+            <tr class="">
+              <th class="align-middle">Mã Nhân Viên</th>
+              <th class="align-middle">Tên Nhân Viên</th>
+              <th class="align-middle">Chức Vụ</th>
+              <th class="align-middle">Lương Cơ Bản</th>
+              <th class="align-middle">Tổng Lương</th>
+              <th class="align-middle">Giờ Làm Trong Tháng</th>
+              <th class="align-middle">Xếp Loại Nhân Viên</th>
+              <th class="align-middle text-center">
+                <i class="fa fa-edit"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tblNhanvien"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../models/method/scrollToEmployee.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../models/toast.js"></script>
+    <script type="module" src="/models/method/create-storage.js"></script>
+    <script type="module" src="/models/method/delete-storage.js"></script>
+    <script src="../models/method/kiemTra.js"></script>
+    <script src="/models/Nhanvien.js"></script>
+    <script src="/controllers/index.js"></script>
+  </body>
+</html>
